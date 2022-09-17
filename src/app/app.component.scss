@@ -1,3 +1,20 @@
 .container-fluid{
     background-color: rgb(71, 71, 198);
 }
+
+
+body{
+    position: relative;
+    padding-bottom: 18px;
+    min-height: 100vh;
+}
+footer{
+    text-align: center;
+    background-color: black;
+    color:aliceblue;
+    padding: 15px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+

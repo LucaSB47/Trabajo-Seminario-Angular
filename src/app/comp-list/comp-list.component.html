@@ -1,18 +1,23 @@
-<table class="table">
+<table class="table text-center">
     <thead>
         <th>Imagen</th>
         <th>Nombre</th>
         <th>Descripccion</th>
         <th>Precio</th>
         <th>Stock</th>
+        <th>Compra</th>
     </thead>
-    <tbody>
+    <tbody class="table-group-divider">
         <tr *ngFor="let cmp of computers" [ngClass]="{'clearance': cmp.clearance}">
-            <td><img [src]="cmp.image" [alt]="cmp.name" class="compImg"></td>
+            <td><img width="200" class="img-thumbnail" [src]="cmp.image" [alt]="cmp.name" class="compImg"></td>
             <td>{{cmp.name}}</td>
             <td>{{cmp.description}}</td>
             <td>{{cmp.price |currency}}</td>
             <td><span class="badge rounded-pill text-bg-warning" *ngIf="cmp.stock==0">Sin stock</span> </td>
-        </tr>
+            <td>
+                <button class="btn btn-outline-primary btn-sm" (click)="upQuantity(cmp)">+</button>
+                <input class="text-center" type="text" [(ngModel)]="cmp.quantity" (keyup)="changeQuantity($event, cmp)">
+                <button class="btn btn-outline-primary btn-sm" (click)="downQuantity(cmp)">-</button></td>
+            </tr>
     </tbody>
 </table>

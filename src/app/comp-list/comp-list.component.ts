@@ -12,26 +12,29 @@ export class CompListComponent implements OnInit {
     {
     image: '../assets/img/lenovo1.png',
     name: 'lenovo thinkpad E14 2da Gen',
-    description: 'Procesamiento hasta Intel® Core™ i7 de 11va generación',
+    description: 'Intel® Core™ i7 de 11va generación',
     price: 4000,
     stock: 20,
     clearance:false,
+    quantity:0,
   },
   {
     image: '../assets/img/legion.png',
     name: 'Legion 5 Pro 7ma Gen',
-    description: 'Diezma la competencia con los procesadores móviles AMD Ryzen™ serie 6000',
+    description: 'AMD Ryzen™ serie 6000',
     price: 4000,
     stock: 20,
     clearance:false,
+    quantity:0,
   },
   {
     image: '../assets/img/lonovo.png',
     name: 'Lenovo ThinkBook 16p 2da Gen',
-    description: 'Potente procesamiento hasta AMD Ryzen™ 9',
+    description: 'AMD Ryzen™ 9',
     price: 4000,
     stock: 0,
     clearance:true,
+    quantity:0,
   },
   
 ];
@@ -40,5 +43,19 @@ export class CompListComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
+  upQuantity(cmp: comp):void{
+    if (cmp.quantity < cmp.stock)
+        cmp.quantity++;
+  }
+
+  downQuantity(cmp: comp){
+    if(cmp.quantity>0)
+      cmp.quantity--;
+}
+
+changeQuantity(event: any, cmp: comp){
+
+}
 
 }

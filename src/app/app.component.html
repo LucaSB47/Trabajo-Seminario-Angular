@@ -1,26 +1,18 @@
 <nav class="navbar navbar-expand-lg bg-light">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">{{title}}</a>
+    <a class="navbar-brand" href="#" [routerLink]="['/computers']">{{title}}</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav">
-        <a class="nav-link" href="#">Perfil</a>
+        <a class="nav-link" href="#" [routerLink]="['/about']">about</a>
       </div>
     </div>
   </div>
 </nav>
 <div class="cotainer">
-  <div class="row">
-    <div class="col-8">
-      Lista de computadoras
-      <app-comp-list></app-comp-list>
-    </div>
-    <div class="col-4">
-      Carrito de compra
-    </div>
-  </div>
+  <router-outlet></router-outlet>
 </div>
 
 <footer>{{title}} 2022</footer>
