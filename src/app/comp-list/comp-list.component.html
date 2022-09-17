@@ -1,0 +1,18 @@
+<table class="table">
+    <thead>
+        <th>Imagen</th>
+        <th>Nombre</th>
+        <th>Descripccion</th>
+        <th>Precio</th>
+        <th>Stock</th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let cmp of computers" [ngClass]="{'clearance': cmp.clearance}">
+            <td><img [src]="cmp.image" [alt]="cmp.name" class="compImg"></td>
+            <td>{{cmp.name}}</td>
+            <td>{{cmp.description}}</td>
+            <td>{{cmp.price |currency}}</td>
+            <td><span class="badge rounded-pill text-bg-warning" *ngIf="cmp.stock==0">Sin stock</span> </td>
+        </tr>
+    </tbody>
+</table>
