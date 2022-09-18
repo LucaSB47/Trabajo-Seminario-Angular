@@ -4,20 +4,22 @@
         <th>Nombre</th>
         <th>Descripccion</th>
         <th>Precio</th>
-        <th>Stock</th>
+        <th>Cantidad</th>
         <th>Compra</th>
     </thead>
     <tbody class="table-group-divider">
         <tr *ngFor="let cmp of computers" [ngClass]="{'clearance': cmp.clearance}">
             <td><img width="200" class="img-thumbnail" [src]="cmp.image" [alt]="cmp.name" class="compImg"></td>
-            <td>{{cmp.name}}</td>
+            <td>{{cmp.name}}</td> 
             <td>{{cmp.description}}</td>
             <td>{{cmp.price |currency}}</td>
-            <td><span class="badge rounded-pill text-bg-warning" *ngIf="cmp.stock==0">Sin stock</span> </td>
             <td>
-                <button class="btn btn-outline-primary btn-sm" (click)="upQuantity(cmp)">+</button>
-                <input class="text-center" type="text" [(ngModel)]="cmp.quantity" (keyup)="changeQuantity($event, cmp)">
-                <button class="btn btn-outline-primary btn-sm" (click)="downQuantity(cmp)">-</button></td>
-            </tr>
+                <span class="badge rounded-pill text-bg-warning" *ngIf="cmp.stock==0">Sin stock</span>
+                <div *ngIf="cmp.stock>0">
+                    <app-input-int [(quantity)]="cmp.quantity" [max]="cmp.stock" ></app-input-int>
+                    
+                </div>
+            </td>
+            <td><button type="button" class="btn" (click)="addToCart(cmp)">Comprar</button></td>
     </tbody>
 </table>

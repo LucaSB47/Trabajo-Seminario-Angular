@@ -8,6 +8,7 @@ import { FormsModule } from '@angular/forms';
 import { CartComponent } from './cart/cart.component';
 import { TechStoreCmptsComponent } from './tech-store-cmpts/tech-store-cmpts.component';
 import { TechStoreAboutComponent } from './tech-store-about/tech-store-about.component';
+import { InputIntComponent } from './input-int/input-int.component';
 
 
 
@@ -19,6 +20,7 @@ import { TechStoreAboutComponent } from './tech-store-about/tech-store-about.com
     CartComponent,
     TechStoreCmptsComponent,
     TechStoreAboutComponent,
+    InputIntComponent,
 
 
   ],

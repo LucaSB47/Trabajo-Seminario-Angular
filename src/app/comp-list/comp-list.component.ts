@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CompCartService } from '../comp-cart.service';
 import { comp } from './comp';
 
 @Component({
@@ -39,23 +40,20 @@ export class CompListComponent implements OnInit {
   
 ];
 
-  constructor() { }
+  constructor(private cart: CompCartService) { 
+    this.cart;
+  }
 
   ngOnInit(): void {
   }
 
-  upQuantity(cmp: comp):void{
-    if (cmp.quantity < cmp.stock)
-        cmp.quantity++;
+  addToCart(computers : comp):void{
+
+    this.cart.addToCart(computers)
+    computers.stock -=computers.quantity;
+    computers.quantity=0;
   }
 
-  downQuantity(cmp: comp){
-    if(cmp.quantity>0)
-      cmp.quantity--;
-}
 
-changeQuantity(event: any, cmp: comp){
-
-}
 
 }
