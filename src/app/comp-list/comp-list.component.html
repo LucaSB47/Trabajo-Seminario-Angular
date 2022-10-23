@@ -16,8 +16,7 @@
             <td>
                 <span class="badge rounded-pill text-bg-warning" *ngIf="cmp.stock==0">Sin stock</span>
                 <div *ngIf="cmp.stock>0">
-                    <app-input-int [(quantity)]="cmp.quantity" [max]="cmp.stock" ></app-input-int>
-                    
+                    <app-input-int [(quantity)]="cmp.quantity" [max]="cmp.stock" (MaxReached)="MaxReached($event)"></app-input-int>
                 </div>
             </td>
             <td><button type="button" class="btn" (click)="addToCart(cmp)">Comprar</button></td>

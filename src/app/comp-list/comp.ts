@@ -6,4 +6,6 @@ export interface comp{
     stock: number;
     clearance: boolean;
     quantity: number;
+    
 }
+
