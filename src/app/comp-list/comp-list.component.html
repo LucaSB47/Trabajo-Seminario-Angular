@@ -9,7 +9,7 @@
     </thead>
     <tbody class="table-group-divider">
         <tr *ngFor="let cmp of computers" [ngClass]="{'clearance': cmp.clearance}">
-            <td><img width="200" class="img-thumbnail" [src]="cmp.image" [alt]="cmp.name" class="compImg"></td>
+            <td><img width="150" class="img-thumbnail" [src]="cmp.image" [alt]="cmp.name" class="compImg"></td>
             <td>{{cmp.name}}</td> 
             <td>{{cmp.description}}</td>
             <td>{{cmp.price |currency}}</td>
@@ -19,6 +19,6 @@
                     <app-input-int [(quantity)]="cmp.quantity" [max]="cmp.stock" (MaxReached)="MaxReached($event)"></app-input-int>
                 </div>
             </td>
-            <td><button type="button" class="btn" (click)="addToCart(cmp)">Comprar</button></td>
+            <td><button type="button" class="btn btn-primary" (click)="addToCart(cmp)">Comprar</button></td>
     </tbody>
 </table>
