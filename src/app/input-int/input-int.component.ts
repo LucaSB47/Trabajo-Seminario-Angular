@@ -42,7 +42,6 @@ export class InputIntComponent implements OnInit {
 }
 
 changeQuantity(event: any){
-
 }
 
 }

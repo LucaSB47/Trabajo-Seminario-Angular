@@ -9,7 +9,7 @@
     </thead>
     <tbody class="table-group-divider">
         <tr *ngFor="let cmp of computers" [ngClass]="{'clearance': cmp.clearance}">
-            <td><img width="150" class="img-thumbnail" [src]="cmp.image" [alt]="cmp.name" class="compImg"></td>
+            <td><img width="150" class="img-thumbnail" [src]="cmp.image" [alt]="cmp.name" class="compImg" ></td>
             <td>{{cmp.name}}</td> 
             <td>{{cmp.description}}</td>
             <td>{{cmp.price |currency}}</td>
