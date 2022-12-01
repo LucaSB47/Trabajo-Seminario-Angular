@@ -5,7 +5,7 @@
         <th>Cantidad</th>
     </thead>
     <tbody *ngFor="let comp of cartList$ | async">
-        <td >{{comp.name}}</td>  
-        <td> {{comp.quantity}}</td>
+        <td *ngIf="comp.quantity !=0">{{comp.name}}</td>  
+        <td *ngIf="comp.quantity !=0"> {{comp.quantity}}</td>
     </tbody>
 </table>
